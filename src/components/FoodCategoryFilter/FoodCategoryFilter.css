@@ -1,0 +1,27 @@
+.food-category-filter {
+  --border-default: 1px solid var(--neutral-color-gray);
+  display: flex;
+  flex-direction: column;
+  border: var(--border-default);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.food-category-filter__item {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  padding: 1rem 7rem 1rem 1rem;
+}
+
+.food-category-filter__item.active {
+  background-color: var(--primary-color);
+  color: var(--neutral-color-white);
+  font-weight: 500;
+  border-radius: 3px;
+  box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, .3);
+}
+
+.food-category-filter--mobile {
+  float: right;
+  padding: .5rem 3rem .5rem .5rem;
+}

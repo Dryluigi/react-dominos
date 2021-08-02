@@ -1,0 +1,49 @@
+.food-card__price-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.food-card a:active,
+.food-card a:hover {
+  text-decoration: underline;
+}
+
+.food-card__price {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.food-card__add-to-cart--circle {
+  flex-shrink: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  fill: var(--accent-color-green);
+}
+
+.food-card__add-to-cart {
+  cursor: pointer;
+  color: var(--neutral-color-white);
+  transition: transform .2s ease-out;
+}
+
+.food-card__add-to-cart:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 500px) {
+  .food-card__price {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .food-card__price {
+    margin-bottom: .5rem;
+  }
+  .food-card__price-cart {
+    flex-direction: column;
+  }
+}

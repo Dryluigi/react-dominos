@@ -1,0 +1,23 @@
+.main-aside {
+  display: flex;
+}
+
+.main-aside__main {
+  flex: 4;
+  margin-right: var(--content-gap);
+}
+
+.main-aside__aside {
+  flex: 2;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-aside {
+    flex-direction: column;
+  }
+
+  .main-aside__main {
+    margin-right: 0;
+    margin-bottom: var(--content-gap);
+  }
+}

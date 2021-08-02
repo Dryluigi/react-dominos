@@ -1,0 +1,26 @@
+.cart-detail__header {
+  padding-bottom: 1rem;
+  display: flex;
+  border-bottom: 1px solid var(--neutral-color-gray);
+}
+
+.cart-detail__check {
+  width: var(--check-width);
+}
+
+.cart-detail__check input {
+  --checkbox-size: 1rem;
+  height: var(--checkbox-size);
+  width: var(--checkbox-size);
+}
+
+.cart-detail__check-all {
+  flex: 1;
+}
+
+.cart-detail__remove-all {
+  color: var(--accent-color-green);
+  font-weight: 500;
+  text-align: end;
+  cursor: pointer;
+}

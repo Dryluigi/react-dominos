@@ -1,0 +1,23 @@
+.menu-detail-layout {
+  display: flex;
+  min-height: var(--page-min-height);
+}
+
+.menu-detail-layout__side {
+  margin-right: var(--content-gap);
+}
+
+.menu-detail-layout__main { 
+  flex: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .menu-detail-layout {
+    flex-direction: column;
+  }
+
+  .menu-detail-layout__side {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}

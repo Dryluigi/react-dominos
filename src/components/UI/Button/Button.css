@@ -1,0 +1,31 @@
+.btn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  padding: .75em 1.5em;
+  color: var(--neutral-color-white);
+  font-weight: 500;
+  background-color: var(--accent-color-green);
+  border: 1px solid var(--accent-color-green);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color .1s ease-in;
+}
+
+.btn:hover {
+  opacity: .5;
+}
+
+.btn:disabled {
+  background-color: #bababa;
+  border: 1px solid #bababa;
+  cursor: not-allowed;
+}
+
+.btn--invert {
+  background-color: var(--neutral-color-white);
+  color: var(--accent-color-green);
+}
+
+.btn--blue {
+  background-color: var(--primary-color);
+}

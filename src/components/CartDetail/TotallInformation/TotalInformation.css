@@ -1,0 +1,36 @@
+.total-information {
+  font-family: 'Roboto', sans-serif;
+}
+
+.total-information h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.total-information__price-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
+
+.total-information__total-price {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem 0;
+  border-top: 1px solid var(--neutral-color-gray);
+}
+
+.total-information__total-price-text {
+  font-weight: 500;
+}
+
+.total-information__next-btn {
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .total-information {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

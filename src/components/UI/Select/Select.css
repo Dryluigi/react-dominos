@@ -1,0 +1,9 @@
+.select {
+  color: var(--neutral-color-black);
+  border: 1px solid var(--neutral-color-gray);
+  border-radius: 3px;
+}
+
+.select:focus {
+  outline: none;
+}

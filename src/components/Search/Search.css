@@ -1,0 +1,30 @@
+.search-input-group {
+  position: relative;
+}
+
+.search-input {
+  width: 16rem;
+  padding: .5rem;
+  border: 1px solid hsl(208, 100%, 100%);
+  border-radius: 3px;
+  background-color:hsl(208, 100%, 87%);
+  font-family: 'Roboto', sans-serif;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-input::placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translate(0, -50%);
+  width: 1rem;
+  color: var(--primary-color);
+}

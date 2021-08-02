@@ -1,0 +1,23 @@
+.section {
+  margin-bottom: var(--content-gap);
+}
+
+.section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section__title {
+  margin-bottom: 1rem;
+}
+
+.section__expand-link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: var(--accent-color-green);
+}
+
+.section__expand-link:hover {
+  text-decoration: underline;
+}

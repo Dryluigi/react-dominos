@@ -1,0 +1,91 @@
+.cart-food__list li {
+  padding: .5rem 0;
+}
+
+.cart-food__item {
+  display: flex;
+}
+
+.cart-food__check {
+  width: var(--check-width);
+  align-self: center;
+}
+
+.cart-food__list {
+  list-style-type: none;
+}
+
+.cart-food__image {
+  --img-size: 120px;
+  width: var(--img-size);
+  height: var(--img-size);
+  margin-right: 1rem;
+}
+
+.cart-food__information {
+  flex: 1;
+  line-height: 1.5;
+  min-width: 0;
+}
+
+.cart-food__name {
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cart-food__price-action {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.cart-food__price {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cart-food__action {
+  display: flex;
+  align-items: center;
+}
+
+.cart-food__remove {
+  margin-right: var(--content-gap);
+  color: var(--accent-color-red);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .cart-food__price-action {
+    flex-direction: column;
+  }
+
+  .cart-food__price {
+    margin-bottom: .5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cart-food__image {
+    --img-size: 100px;
+  }
+
+  .cart-food__variant {
+    font-size: .9rem;
+  }
+
+  .cart-food__action {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .cart-food__price {
+    font-size: 1rem;
+  }
+
+  .cart-food__action-quantity {
+    margin-bottom: .5rem;
+  }
+}

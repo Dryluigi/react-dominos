@@ -1,25 +1,62 @@
-import logo from './logo.svg';
+import { Switch, Route } from 'react-router-dom';
+
 import './App.css';
+import Footer from './components/Footer/Footer';
 
-function App() {
+import Header from './components/Header/Header';
+import Menus from './pages/Menus/Menus';
+import MenuDetail from './pages/MenuDetail/MenuDetail';
+import Home from './pages/Home/Home';
+import Food from './pages/Food/Food';
+import Cart from './pages/Cart/Cart';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import NoPageFound from './pages/NoPage/NoPageFound';
+import ScrollToTop from './components/Scroll/ScrollToTop';
+import Overlay from './components/UI/Ovelay/Overlay';
+import { HeaderProvider } from './contexts/header/header-context';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ScrollToTop />
+      <Overlay />
+      <div className="App">
+        <HeaderProvider>
+          <Header />
+        </HeaderProvider>
+        <main>
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/menus" exact>
+              <Menus />
+            </Route>
+            <Route path="/menus/:category" exact>
+              <MenuDetail />
+            </Route>
+            <Route path="/menus/:category/:foodId">
+              <Food />
+            </Route>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="*">
+              <NoPageFound />
+            </Route>
+          </Switch>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
-}
+};
 
-export default App;
+export default App;;

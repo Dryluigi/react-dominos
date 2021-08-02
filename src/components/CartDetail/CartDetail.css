@@ -1,0 +1,8 @@
+.cart-food-container {
+  position: relative;
+}
+
+.cart-food {
+  --check-width: 35px;
+  font-family: 'Roboto', sans-serif;
+}

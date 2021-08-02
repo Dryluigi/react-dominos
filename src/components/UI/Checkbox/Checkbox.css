@@ -1,0 +1,5 @@
+.checkbox {
+  --checkbox-size: 1rem;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+}

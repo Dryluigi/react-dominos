@@ -1,0 +1,25 @@
+.login {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-group input {
+  font-family: 'Roboto', sans-serif;
+  padding: .5rem;
+}
+
+.form__title {
+  margin-bottom: 1em;
+}
+
+.form__submit {
+  padding: .5em 1em;
+}

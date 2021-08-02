@@ -1,0 +1,5 @@
+.food {
+  margin-bottom: var(--content-gap);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--neutral-color-gray);
+}

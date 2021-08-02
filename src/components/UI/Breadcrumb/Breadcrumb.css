@@ -1,0 +1,33 @@
+.breadcrumb {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: var(--content-gap);
+}
+
+.breadcrumb__item {
+  text-transform: capitalize;
+  line-height: 1.5;
+}
+
+.breadcrumb__item:hover {
+  color: var(--primary-color);
+}
+
+.breadcrumb__item::before {
+  content: '/';
+  margin: 0 .75rem
+}
+
+.breadcrumb__item:first-child:before {
+  content: '';
+  margin: 0;
+}
+
+.breadcrumb__item.active {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.breadcrumb__item.active::before {
+  color: var(--neutral-color-black);
+  font-weight: normal;
+}

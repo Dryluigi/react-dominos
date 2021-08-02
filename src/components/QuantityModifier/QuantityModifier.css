@@ -1,0 +1,59 @@
+.quantity-modifier {
+  --btn-padding: .5rem;
+  --icon-size: 1rem;
+  --total-width: 150px;
+  --input-padding: .55rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--total-width);
+}
+
+.quantity-btn {
+  flex: 0;
+  padding: var(--btn-padding);
+  height: 100%;
+  width: 130px;
+  background-color: var(--neutral-color-white);
+  border: 1px solid var(--neutral-color-gray);
+  cursor: pointer;
+}
+
+.quantity-btn:disabled {
+  background-color: #a9a9a9;
+}
+
+.quantity-btn:hover {
+  background-color: #a9a9a9;
+}
+
+.quantity-add-icon {
+  height: var(--icon-size);
+  width: var(--icon-size);
+  vertical-align:middle;
+}
+
+.quantity-input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--input-padding);
+  margin: 0 .5rem;
+  text-align: center;
+}
+
+.quantity-input:disabled {
+  background-color: var(--neutral-color-white);
+  border: 1px solid var(--neutral-color-gray);
+}
+
+.quantity-modifier--small {
+  --icon-size: .7rem;
+  --btn-padding: .2rem;
+  --total-width: 100px;
+  --input-padding: .1rem 0;
+  text-align: center;
+}
+
+.quantity-modifier--small .quantity-input {
+  font-size: var(--icon-size);
+}

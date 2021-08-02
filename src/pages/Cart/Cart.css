@@ -1,0 +1,25 @@
+.cart-page h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-bottom: var(--content-gap);
+}
+
+.cart-page__empty {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.cart-page__empty img {
+  --img-size: 200px;
+  width: var(--img-size);
+  height: var(--img-size);
+}
+
+.cart-page__empty h1 {
+  margin-bottom: 1rem;
+}
+
+.cart-page__empty p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}

@@ -1,0 +1,9 @@
+.cart-btn__container {
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .cart-btn__container {
+    position: initial;
+  }
+}

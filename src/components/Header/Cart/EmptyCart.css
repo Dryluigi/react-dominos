@@ -1,0 +1,21 @@
+.empty-cart {
+  --illustration-size: 100px;
+  padding: var(--content-padding);
+  text-align: center;
+  height: 100%;
+  padding-top: 2rem;
+  min-height: 300px;
+}
+
+.empty-cart__illustration {
+  width: var(--illustration-size);
+  height: var(--illustration-size);
+}
+
+.empty-cart h3 {
+  font-size: 1.5rem;
+}
+
+.empty-cart p {
+  font-weight: 300;
+}

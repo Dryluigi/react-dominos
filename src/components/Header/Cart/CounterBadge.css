@@ -1,0 +1,18 @@
+.counter-badge {
+  --counter-badge-size: 20px;
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  background-color: var(--accent-color-red);
+  border-radius: 100%;
+  height: var(--counter-badge-size);
+  width: var(--counter-badge-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.counter-badge small {
+  color: var(--neutral-color-white);
+}
