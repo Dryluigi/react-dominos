@@ -1,3 +1,4 @@
 .menu__name {
   text-align: center;
+  text-transform: capitalize;
 }

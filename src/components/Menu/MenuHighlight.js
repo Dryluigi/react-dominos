@@ -1,8 +1,6 @@
 import React from 'react';
 import { useRouteMatch, Link } from 'react-router-dom';
 
-import './Menu.css';
-
 import Section from '../UI/Section/Section';
 import Card from '../UI/Card/Card';
 import FourColumnGrid from '../UI/GridLayout/FourColumnGrid';
