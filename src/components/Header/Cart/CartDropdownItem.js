@@ -8,7 +8,7 @@ import { cartActions } from '../../../store/cart/cart-slice';
 import formatToIdr from '../../../lib/idr-string';
 import formatCartVariant from '../../../lib/format-cart-variant';
 
-const CartDropdownItem = ({ food }) => {
+const CartDropdownItem = ({ food, className }) => {
   const dispatch = useDispatch();
 
   const removeFoodHandler = () => {
@@ -23,7 +23,7 @@ const CartDropdownItem = ({ food }) => {
   }, [dispatch, food.id]);
 
   return (
-    <li>
+    <li className={className}>
       <img src={ food.image } alt="foods" />
       <div className="cart-dropdown__information">
         <p className="cart-dropdown__name">{ food.name }</p>

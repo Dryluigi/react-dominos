@@ -8,23 +8,20 @@ import CartDetailHeader from './CartDetailHeader/CartDetailHeader';
 import CartFoodItem from './CartFoodItem/CartFoodItem';
 import TotalInformation from './TotallInformation/TotalInformation';
 import { checkoutActions } from '../../store/checkout/checkout-slice';
+import cartFoodsSort from '../../lib/cart-foods-sort';
 
 const CartDetail = () => {
   const dispatch = useDispatch();
   const cartFoods = useSelector(state => state.cart.foods);
 
-  useEffect(() => {
-    const checkedFoods = cartFoods.filter(food => food.checked);
-
-    dispatch(checkoutActions.moveCartToCheckout({ foods: checkedFoods }));
-  }, [dispatch, cartFoods]);
+  const sortedCartFoods = cartFoodsSort(cartFoods);
 
   return (
     <MainAside>
       <Main className="cart-food">
         <CartDetailHeader />
         <ul className="cart-food__list">
-          { cartFoods.map(food => (
+          { sortedCartFoods.map(food => (
             <CartFoodItem key={ food.id } food={ food }/>
           )) }
         </ul>

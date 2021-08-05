@@ -26,6 +26,11 @@
   width: 100%;
 }
 
+.cart-dropdown__foods li.not-checked {
+  opacity: .5;
+  pointer-events: none;
+}
+
 .cart-dropdown__foods li img {
   width: var(--img-size);
   height: var(--img-size);

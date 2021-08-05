@@ -10,11 +10,15 @@ import formatToIdr from '../../../lib/idr-string';
 import EmptyCart from './EmptyCart';
 import { overlayActions } from '../../../store/overlay/overlay-slice';
 
+import cartFoodsSort from '../../../lib/cart-foods-sort';
+
 const CartDropdown = (props) => {
   const dispatch = useDispatch();
   const cartFoods = useSelector(state => state.cart.foods);
-  const totalPrice = useSelector(state => state.cart.totalPrice);
+  const checkedPrice = useSelector(state => state.cart.checkedPrice);
   const cartIsEmpty = useSelector(state => state.cart.isEmpty);
+
+  const sortedCartFoods = cartFoodsSort(cartFoods);
 
   const closeOverlayHandler = () => {
     dispatch(overlayActions.closeOverlay());
@@ -25,14 +29,14 @@ const CartDropdown = (props) => {
     : (
       <>
         <ul className="cart-dropdown__foods">
-          { cartFoods.map(food => (
-            <CartDropdownItem key={ food.id } food={ food }/>
+          { sortedCartFoods.map(food => (
+            <CartDropdownItem className={`${food.checked ? '' : 'not-checked'}`} key={ food.id } food={ food }/>
           )) }
         </ul>
         <div className="cart-dropdown__summary">
           <div className="cart-dropdown__total">
             <span className="total">Total Harga</span>
-            <p className="price">{ formatToIdr(totalPrice) }</p>
+            <p className="price">{checkedPrice !== 0 ? formatToIdr(checkedPrice) : '-'}</p>
           </div>
           <Link onClick={ closeOverlayHandler } to="/cart">
             <Button className="cart-dropdown__checkout" text="Lihat Keranjang / Checkout"/>

@@ -12,11 +12,12 @@ const pushNewFood = (state, newFood, quantity) => {
     price: +newFood.calculatedPrice,
     totalPrice: price,
     variant: newFood.variant ? newFood.variant : null,
-    checked: false,
+    checked: true,
   };
 
   state.foods.push(insertedFood);
   state.totalPrice += price;
+  state.checkedPrice += price;
 };
 
 const cartSlice = createSlice({
@@ -24,6 +25,8 @@ const cartSlice = createSlice({
   initialState: {
     foods: [],
     totalPrice: 0,
+    totalQuantity: 0,
+    checkedPrice: 0,
     isEmpty: true,
   },
   reducers: {
@@ -46,12 +49,16 @@ const cartSlice = createSlice({
         const currentQuantity = state.foods[currentFood].quantity + (+quantity);
         state.totalPrice -= state.foods[currentFood].totalPrice;
         state.totalPrice += (+newFood.calculatedPrice) * currentQuantity;
-        
+        state.checkedPrice -= state.foods[currentFood].totalPrice;
+        state.checkedPrice += (+newFood.calculatedPrice) * currentQuantity;
+
         state.foods[currentFood].totalPrice = currentQuantity * (+newFood.calculatedPrice);
         state.foods[currentFood].quantity = currentQuantity;
+        state.foods[currentFood].checked = true;
       }
 
       state.isEmpty = false;
+      state.totalQuantity += (+quantity);
     },
     removeFoodFromCart(state, action) {
       const { id } = action.payload;
@@ -62,8 +69,13 @@ const cartSlice = createSlice({
       }
 
       state.totalPrice -= selectedFood[0].totalPrice;
+      state.totalQuantity -= selectedFood[0].quantity;
+      
+      if (selectedFood[0].checked) {
+        state.checkedPrice -= selectedFood[0].totalPrice;
+      }
       state.foods = state.foods.filter(food => food.id !== id);
-
+      
       if (state.foods.length < 1) {
         state.isEmpty = true;
       }
@@ -76,12 +88,21 @@ const cartSlice = createSlice({
         return;
       }
 
-      state.totalPrice -= state.foods[currentIndex].totalPrice;
+      const currentFoodTotalPrice = state.foods[currentIndex].totalPrice;
       const newFoodTotalPrice = (+newQuantity) * state.foods[currentIndex].price;
+      state.totalPrice -= currentFoodTotalPrice;
       state.totalPrice += newFoodTotalPrice;
+      if (state.foods[currentIndex].checked) {
+        state.checkedPrice -= currentFoodTotalPrice;
+        state.checkedPrice += newFoodTotalPrice;
+      }
+
+      state.totalQuantity -= state.foods[currentIndex].quantity;
+      state.totalQuantity += (+newQuantity);
 
       state.foods[currentIndex].totalPrice = newFoodTotalPrice;
       state.foods[currentIndex].quantity = (+newQuantity);
+      
     },
     updateCheckFood(state, action) {
       const { id, newChecked } = action.payload;
@@ -92,20 +113,29 @@ const cartSlice = createSlice({
       }
 
       state.foods[currentIndex].checked = newChecked;
+      if (newChecked) {
+        state.checkedPrice += state.foods[currentIndex].totalPrice;
+      } else {
+        state.checkedPrice -= state.foods[currentIndex].totalPrice;
+      }
     },
     checkAll(state, action) {
       state.foods.forEach((element, index) => {
         state.foods[index].checked = true;
       });
+      state.checkedPrice = state.totalPrice;
     },
     uncheckAll(state, action) {
       state.foods.forEach((element, index) => {
         state.foods[index].checked = false;
       });
+      state.checkedPrice = 0;
     },
     clearCart(state, action) {
       state.foods = [];
       state.totalPrice = 0;
+      state.checkedPrice = 0;
+      state.totalQuantity = 0;
       state.isEmpty = true;
     }
   }

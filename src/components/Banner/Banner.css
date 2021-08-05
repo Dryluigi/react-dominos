@@ -1,11 +1,12 @@
 .banner {
   display: block;
-  background-image: url("../../assets/images/banners/FrankieSausageCrustDIGITALWebBanner.jpg");
+  background-image: url("../../assets/images/banners/banner1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 19vw;
   margin: var(--content-gap) 0;
+  /* background: rgba(202, 103, 103, .3); */
 }
 
 @media screen and (max-width: 500px) {

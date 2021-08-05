@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import './CounterBadge.css';
 
 const CounterBadge = () => {
-  const cartFoods = useSelector(state => state.cart.foods);
   const cartIsEmpty = useSelector(state => state.cart.isEmpty);
+  const totalQuantity = useSelector(state => state.cart.totalQuantity);
 
   if (cartIsEmpty) {
     return null;
@@ -13,7 +13,7 @@ const CounterBadge = () => {
 
   return (
     <div className="counter-badge">
-      <small>{ cartFoods.length }</small>
+      <small>{ totalQuantity }</small>
     </div>
   );
 };
